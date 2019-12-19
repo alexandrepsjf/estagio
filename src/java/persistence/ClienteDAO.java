@@ -105,7 +105,8 @@ public class ClienteDAO {
 
             conn = DatabaseLocator.getInstance().getConnection();
             st = conn.createStatement();
-            resultado = st.executeQuery("select * from cliente");            
+            resultado = st.executeQuery("select * from cliente"); 
+            
             while (resultado.next()) {
                 Cliente cliente = new Cliente();
                 cliente.setCodContato(resultado.getInt("codContato"));
@@ -123,6 +124,7 @@ public class ClienteDAO {
             closeResources(conn, st);//s
         }
     }
+     
     
 
     public Cliente Buscar(int codContato) throws SQLException, ClassNotFoundException {

@@ -35,7 +35,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+           <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(página atual)</span></a>
@@ -44,7 +44,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                         <a class="nav-link" href="FrontController?action=ConsultarCliente">Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="FrontController?action=ConsultarCliente">Análise</a>
+                        <a class="nav-link" href="FrontController?action=AnalisarCliente">Análise</a>
                     </li>
 
                 </ul>

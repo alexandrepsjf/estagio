@@ -34,22 +34,21 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
+ <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.jsp">Home <span class="sr-only">(página atual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrontController?action=ConsultarCliente">Cliente</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="FrontController?action=AnalisarCliente">Análise</a>
+                    </li>
 
-        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.jsp">Home <span class="sr-only">(página atual)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="FrontController?action=ConsultarCliente">Cliente</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="FrontController?action=AnalisarCliente">Análise</a>
-                </li>
+                </ul>
 
-            </ul>
-
-        </div>
+            </div>
     </nav>
     <div class="center ">
         <h3>Editar  Cliente <c:out value="${cliente.codContato}" /> </h3>
@@ -73,8 +72,8 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
             <label for="textSexo"></label>
             <select class="form-control" id="textSexo" name="textSexo">
                 <option >Selecione o sexo....</option>
-                <option value="Masculino" <c:if test='${cliente.sexo eq "Masculino"}'> selected="selected" </c:if> >Masculino</option>
-                <option value="Feminino" <c:if test='${cliente.sexo eq "Feminino"}'> selected="selected" </c:if> >Feminino</option>
+                <option value="Masculino" <c:if test='${cliente.sexo eq "Masculino"  or cliente.sexo eq "masculino"}'> selected="selected" </c:if> >Masculino</option>
+                <option value="Feminino" <c:if test='${cliente.sexo eq "Feminino" or cliente.sexo eq "feminino"}'> selected="selected" </c:if> >Feminino</option>
             </select>
         </div>
  

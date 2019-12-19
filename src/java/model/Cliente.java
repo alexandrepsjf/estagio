@@ -68,27 +68,30 @@ public class Cliente {
     public void setData(String data) {
         this.data = data;
     }
-private Boolean temCidade(ArrayList<String> cidades){
-    
-     for (String cidade : cidades){
-            if(this.cidade.equals(cidade)){
-            return true;}
-        }
-return false;
 
-}
-    private ArrayList separaCEP(ArrayList<Cliente> clientes) {
+    private Boolean temCidade(ArrayList<String> cidades) {
+
+        for (String cidade : cidades) {
+            if (this.cidade.equalsIgnoreCase(cidade)) {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    private static ArrayList separaCEP(ArrayList<Cliente> clientes) {
         ArrayList<String> cidades = new ArrayList<String>();
-        for (Cliente cliente : clientes){
-          if(cliente.temCidade(cidades)){
-              cidades.add(cliente.cidade);
-          }  
+        for (Cliente cliente : clientes) {
+            if (!cliente.temCidade(cidades)) {
+                cidades.add(cliente.cidade);
+            }
         }
         return cidades;
 
     }
 
-    public static String analiseGeral(ArrayList clientes) {
+    public static String analisarGeral(ArrayList clientes) {
         String resultado = "";
         resultado += clientes.size() + " clientes cadastados ";
         resultado += "</br>(" + contMasc(clientes) + ") masculinos";
@@ -97,20 +100,43 @@ return false;
         return resultado;
     }
 
-    public static String analiseCEP(ArrayList clientes) {
-        ArrayList cidade = new ArrayList<String>();
-        String resultado = "";
-        resultado += clientes.size() + " clientes cadastados ";
-        resultado += "</br>(" + contMasc(clientes) + ") masculinos";
-        resultado += "(" + contFem(clientes) + ") femininos";
+    public static String analisarCEP(ArrayList clientes) {
 
+        ArrayList cidades = separaCEP(clientes);
+        String resultado = "";
+        resultado = organizarPorCEP(clientes, cidades);
+        return resultado;
+    }
+
+    private static String organizarPorCEP(ArrayList<Cliente> clientes, ArrayList<String> cidades) {
+        String resultado = "";
+
+        for (String cidade : cidades) {
+            int masc = 0, fem = 0, cont = 0;
+            resultado += "</br>" + cidade.toString();
+            for (Cliente cliente : clientes) {
+                if (cliente.cidade.equalsIgnoreCase(cidade.toString())) {
+                    cont++;
+                    if (cliente.sexo.equalsIgnoreCase("masculino")) {
+                        masc++;
+                    } else {
+                        fem++;
+                    }
+                }
+            }
+
+            resultado +=" : "+   cont ;
+            resultado += " - (" + masc + ") masculinos";
+            resultado += "(" + fem + ") femininos";
+
+        }
         return resultado;
     }
 
     private static int contMasc(ArrayList<Cliente> clientes) {
         int totalMasc = 0;
         for (Cliente cliente : clientes) {
-            if (cliente.getSexo().equals("Masculino")) {
+            if (cliente.getSexo().equalsIgnoreCase("Masculino")) {
                 totalMasc++;
             };
         }
@@ -120,7 +146,7 @@ return false;
     private static int contFem(ArrayList<Cliente> clientes) {
         int totalFem = 0;
         for (Cliente cliente : clientes) {
-            if (cliente.getSexo().equals("Feminino")) {
+            if (cliente.getSexo().equalsIgnoreCase("Feminino")) {
                 totalFem++;
             };
         }

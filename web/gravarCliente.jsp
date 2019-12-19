@@ -44,7 +44,7 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                         <a class="nav-link" href="FrontController?action=ConsultarCliente">Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="FrontController?action=ConsultarCliente">Análise</a>
+                        <a class="nav-link" href="FrontController?action=AnalisarCliente">Análise</a>
                     </li>
 
                 </ul>
@@ -70,8 +70,8 @@ on Libraries node in Projects view can be used to add the JSTL 1.1 library.
                 <label for="textSexo"></label>
                 <select class="form-control" id="textSexo" name="textSexo">
                     <option selected>Selecione o sexo....</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
                 </select>
             </div>
 

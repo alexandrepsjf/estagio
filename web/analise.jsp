@@ -37,14 +37,16 @@
                         <a class="nav-link" href="FrontController?action=ConsultarCliente">Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="FrontController?action=ConsultarCliente">Análise</a>
+                        <a class="nav-link" href="FrontController?action=AnalisarCliente">Análise</a>
                     </li>
 
                 </ul>
 
             </div>
         </nav>
-        <h1>${analise} </h1>
+        <div class="center">
+        <h2>${analise1} </h2>
+        <h3>${analise2} </h3></div>
         <a href="index.jsp" class="btn red"><button>Voltar</button></a>
 
     </body>

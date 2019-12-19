@@ -37,7 +37,7 @@
                         <a class="nav-link" href="FrontController?action=ConsultarCliente">Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="FrontController?action=ConsultarCliente">Análise</a>
+                        <a class="nav-link" href="FrontController?action=AnalisarCliente">Análise</a>
                     </li>
 
                 </ul>
