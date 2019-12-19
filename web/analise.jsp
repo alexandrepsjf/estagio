@@ -44,7 +44,7 @@
 
             </div>
         </nav>
-        <div class="center">
+        <div class="center text-center">
         <h2>${analise1} </h2>
         <h3>${analise2} </h3></div>
         <a href="index.jsp" class="btn red"><button>Voltar</button></a>
